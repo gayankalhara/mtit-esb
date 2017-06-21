@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="gmail_message" type="synapse/template">
+  <subComponents>
+    	<component name="getMsg">
+      <file>getMsg.xml</file>
+      <description>Get specific message by id</description>
+    </component>
+    </subComponents>
+</component>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template name="getThreadList" xmlns="http://ws.apache.org/ns/synapse">
+	<parameter name="userid" description="The userid"/>
+	<sequence>
+		<property expression="$func:userid" name="uri.var.userid"/>
+		<call>
+			<endpoint>
+				<http method="get" uri-template="https://www.googleapis.com/gmail/v1/users/{uri.var.userid}/threads"/>
+			</endpoint>
+		</call>
+	</sequence>
+</template>

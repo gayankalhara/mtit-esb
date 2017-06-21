@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="gmail_profile" type="synapse/template">
+  <subComponents>
+    	<component name="getProfile">
+      <file>getProfile.xml</file>
+      <description>Get user's profile</description>
+    </component>
+    </subComponents>
+</component>

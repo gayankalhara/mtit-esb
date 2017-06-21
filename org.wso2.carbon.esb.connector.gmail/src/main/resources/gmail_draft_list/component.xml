@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="gmail_draft_list" type="synapse/template">
+  <subComponents>
+    	<component name="getDraftList">
+      <file>getDraftList.xml</file>
+      <description>Get user's draft list</description>
+    </component>
+    </subComponents>
+</component>

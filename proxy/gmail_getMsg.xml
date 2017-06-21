@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse" name="gmail_getMsg" transports="https,http" statistics="disable" trace="disable" startOnLoad="true">
+	<target>
+		<inSequence>
+			<property name="userid" expression="json-eval($.userid)"/>
+			<property name="msgid" expression="json-eval($.msgid)"/>
+			<property name="accessToken" expression="json-eval($.accessToken)"/>
+			<gmail.init>
+				<accessToken>{$ctx:accessToken}</accessToken>
+			</gmail.init>
+			<gmail.getMsg>
+				<userid>{$ctx:userid}</userid>
+				<msgid>{$ctx:msgid}</msgid>
+			</gmail.getMsg>
+			<respond/>
+		</inSequence>
+		<outSequence>
+			<log/>
+			<send/>
+		</outSequence>
+	</target>
+	<description/>
+</proxy>

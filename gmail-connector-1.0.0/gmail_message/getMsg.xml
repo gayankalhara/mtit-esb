@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template name="getMsg" xmlns="http://ws.apache.org/ns/synapse">
+	<parameter name="userid" description="The userid"/>
+	<parameter name="msgid" description="The msgid"/>
+	<sequence>
+		<property expression="$func:userid" name="uri.var.userid"/>
+		<property expression="$func:msgid" name="uri.var.msgid"/>
+		<property name="Accept-Encoding" action="remove" scope="transport"/>
+		<property name="messageType" scope="axis2" value="application/json"/>
+		<call>
+			<endpoint>
+				<http method="get" uri-template="https://www.googleapis.com/gmail/v1/users/{uri.var.userid}/messages/{uri.var.msgid}"/>
+			</endpoint>
+		</call>
+	</sequence>
+</template>

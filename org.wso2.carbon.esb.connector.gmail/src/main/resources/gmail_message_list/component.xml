@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="gmail_message_list" type="synapse/template">
+  <subComponents>
+    	<component name="getMsgList">
+      <file>getMsgList.xml</file>
+      <description>Get user's message list</description>
+    </component>
+    </subComponents>
+</component>

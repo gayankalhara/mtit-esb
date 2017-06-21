@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template name="getDraftList" xmlns="http://ws.apache.org/ns/synapse">
+	<parameter name="userid" description="The userid"/>
+	<sequence>
+		<property expression="$func:userid" name="uri.var.userid"/>
+		<property name="Accept-Encoding" action="remove" scope="transport"/>
+		<property name="messageType" scope="axis2" value="application/json"/>
+		<call>
+			<endpoint>
+				<http method="get" uri-template="https://www.googleapis.com/gmail/v1/users/{uri.var.userid}/drafts"/>
+			</endpoint>
+		</call>
+	</sequence>
+</template>

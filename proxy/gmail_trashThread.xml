@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse" name="gmail_trashThread" transports="https,http" statistics="disable" trace="disable" startOnLoad="true">
+	<target>
+		<inSequence>
+			<property name="userid" expression="json-eval($.userid)"/>
+			<property name="threadid" expression="json-eval($.threadid)"/>
+			<property name="accessToken" expression="json-eval($.accessToken)"/>
+			<gmail.init>
+				<accessToken>{$ctx:accessToken}</accessToken>
+			</gmail.init>
+			<gmail.trashThread>
+				<userid>{$ctx:userid}</userid>
+				<threadid>{$ctx:threadid}</threadid>
+			</gmail.trashThread>
+			<respond/>
+		</inSequence>
+		<outSequence>
+			<log/>
+			<send/>
+		</outSequence>
+	</target>
+	<description/>
+</proxy>

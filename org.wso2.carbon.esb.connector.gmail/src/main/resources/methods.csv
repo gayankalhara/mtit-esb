@@ -1,0 +1,7 @@
+gmail_config,init,accessToken,Configuration File
+gmail_profile,getProfile,userid,Get user's profile
+gmail_message_list,getMsgList,userid,Get user's message list
+gmail_thread_list,getThreadList,userid,Get user's thread list
+gmail_draft_list,getDraftList,userid,Get user's draft list
+gmail_message,getMsg,userid:msgid,Get specific message by id
+gmail_trash_thread,trashThread,userid:threadid,move specific thread to trash
